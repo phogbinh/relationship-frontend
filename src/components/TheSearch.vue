@@ -1,6 +1,8 @@
 <template>
   <div class='search'>
-    <input type='text' placeholder='Enter the nickname of the dude that you want to search..' v-model='nickname'>
+    <form @submit.prevent='searchNickname'>
+      <input type='text' placeholder='Enter the nickname of the dude that you want to search..' v-model='nickname'>
+    </form>
   </div>
 </template>
 
@@ -10,6 +12,11 @@ export default {
   'data': function() {
     return {
       'nickname': ''
+    }
+  },
+  'methods': {
+    searchNickname() {
+      console.log(this['nickname'])
     }
   }
 }
